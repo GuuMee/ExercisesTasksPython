@@ -32,3 +32,9 @@ wci = WC_OFFSET + WC_FACTOR1 * air_temp - WC_FACTOR2 * wind_speed ** WC_EXPOPNEN
 
 # Display the result rounded to the closest integer
 print("The valid chill index is", round(wci))
+
+
+# Results:
+# Enter the air temperature (degrees Celsius): 0
+# Enter the wind speed (km/h): 2.345
+# The valid chill index is 26
