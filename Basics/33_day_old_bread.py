@@ -25,3 +25,8 @@ print("Regular price: %5.2f" % regular_price)
 print("Discount: %5.2f" % discount)
 print("Total: %5.2f" % total)
 
+# Result:
+# Enter the number of day loaves: 53
+# Regular price: 184.97
+# Discount: 110.98
+# Total: 73.99
