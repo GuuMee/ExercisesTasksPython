@@ -11,3 +11,4 @@ print("| CELSIUS | FAHRENHEIT |")
 for i in range(1, 101, 9):
     fahren = (i * 9/5) + 32
     print("|    %d    |    %.2f   | " % (i, fahren))
+
