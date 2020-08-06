@@ -37,7 +37,7 @@ pattern2 = re.compile(reg_n4+reg_l)
 
 if len(plate) == 6 and pattern1:
     print("The plate is a valid older style plate.")
-elif len(plate) ==7 and pattern2:
+elif len(plate) == 7 and pattern2:
     print("The plate is a valid never style plate.")
 else:
     print("The plate is not valid.")
