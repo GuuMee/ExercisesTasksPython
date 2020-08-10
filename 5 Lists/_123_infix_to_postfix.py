@@ -46,21 +46,42 @@ as an independent study exercise for the interested student.
 """
 
 from _122_tokenizing_a_string import token_list
-from _91_operator_precedence import operator_precedence
 
 BASE_OPERATORS = ["+", "-", "*", "/", "^"]
 
 
-def infix_to_postfix (tokens):
+def operator_precedence(s):
+    dec = 0
+    i = 0
+    while i < len(s):
+        if s[i] == "+" or s[i] == "-":
+            dec = 1
+            break
+        elif s[i] == "*" or s[i] == "/":
+            dec = 2
+            break
+        elif s[i] == "^":
+            dec = 3
+            break
+        else:
+            dec = -1
+        i += 1
+
+    return dec
+
+
+# I couldn't solve this correctly
+def infix_to_postfix(tokens):
     operators = []
     postfix = []
 
     for i in range(0, len(tokens)):
-        if int(i) == int:
-            postfix.append(i)
+        if tokens[i].isnumeric():
+            token_int = int(tokens[i])
+            postfix.append(token_int)
         elif i in BASE_OPERATORS:
-            while len(operators) != 0 and operators[-1] != "(" and  \
-                    operator_precedence(i) < operator_precedence(operators[-1]):
+            while len(operators) != 0 and operators[-1] != "(" \
+                    and operator_precedence(tokens[i]) < operator_precedence(operators[-1]):
                 from_operators = operators.pop(-1)
                 postfix.append(from_operators)
             operators.append(i)
