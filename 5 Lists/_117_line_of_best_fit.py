@@ -18,3 +18,37 @@ by replacing m and b with the values you calculated using the preceding formulas
 For example, if the user inputs the coordinates (1, 1), (2, 2.1) and (3, 2.9) then your
 program should display y = 0.95x + 0.1.
 """
+
+
+def best_fit(points):
+    m = 0
+    sum_x, sum_y = 0, 0
+    sum_xy = 0
+    x_avg, y_avg = 0,0
+    length = len(points)
+    for p in points:
+        sum_xy += p[0]*p[1]
+        sum_x += p[0]
+        sum_y += p[1]
+        sum_xy = round(sum_xy, 1)
+    y_avg += sum_x / length
+    x_avg += sum_y / length
+    m += (sum_xy - (sum_x * sum_y)/length) / (sum_x**2 - (sum_x**2 / length))
+    b = y_avg - (m * x_avg)
+    print("The line of the best fit is y = %.2fx + %.2f" % (m, b))
+
+
+def main():
+    points = []
+    i = 0
+    length = 3
+    # Read from user list of 2 point separated by space (alternate x,y = map(int, input())
+    while i < length:
+        inputs = list(map(float, input("Enter x and y followed by space (blank for quit): ").split()))
+        points.append(inputs)
+        i += 1
+    best_fit(points)
+
+
+if __name__ == '__main__':
+    main()
